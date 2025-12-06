@@ -33,8 +33,12 @@ export default function LoadingPage({ onNavigate, selectedProducts, setMixResult
         console.log("API 응답:", result);
         
         setMixResult(result);
+
+        setProgress(100);
+        setTimeout(() => onNavigate('result'), 800);
         
         // 프로그레스바 애니메이션
+        /*
         timer = setInterval(() => {
           setProgress(prev => {
             if (prev >= 100) {
@@ -45,6 +49,7 @@ export default function LoadingPage({ onNavigate, selectedProducts, setMixResult
             return prev + 10;
           });
         }, 150);
+        */
 
       } catch (error) {
         setError(error.message || "분석에 실패했습니다");
