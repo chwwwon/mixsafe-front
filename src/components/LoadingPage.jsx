@@ -36,6 +36,8 @@ export default function LoadingPage({ onNavigate, selectedProducts, setMixResult
 
         setProgress(100);
         setTimeout(() => onNavigate('result'), 800);
+
+        onNavigate('result');
         
         // 프로그레스바 애니메이션
         /*
